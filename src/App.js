@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
+import { CartProvider, CartContext } from './components/CartContext'; // ✅ correct import
+import "./App.css";
+
+// ✅ Move header inside a component so useContext is called inside CartProvider
+const Header = () => {
+  const { cartItems } = useContext(CartContext);
+
+  return (
+    <header>
+      <a href="/">Home</a> | <a href="/cart">Cart ({cartItems.length})</a>
+    </header>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <CartProvider>
+        <Header /> {/* ✅ header placed inside CartProvider */}
+        <AppRoutes />
+      </CartProvider>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
