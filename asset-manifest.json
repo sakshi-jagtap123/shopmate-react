@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/shopmate-react/static/css/main.e7c1bec4.css",
+    "main.js": "/shopmate-react/static/js/main.031e380c.js",
+    "index.html": "/shopmate-react/index.html",
+    "main.e7c1bec4.css.map": "/shopmate-react/static/css/main.e7c1bec4.css.map",
+    "main.031e380c.js.map": "/shopmate-react/static/js/main.031e380c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e7c1bec4.css",
+    "static/js/main.031e380c.js"
+  ]
+}
